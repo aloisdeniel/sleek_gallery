@@ -4,6 +4,7 @@ import 'package:sleek/sleek.dart';
 import 'package:sleek_button/sleek_button.dart';
 
 import '../headers.dart';
+import '../scaffold.dart';
 
 class ButtonSection extends StatelessWidget {
   const ButtonSection();
@@ -23,11 +24,12 @@ class ButtonSection extends StatelessWidget {
       sleek.palette.dark,
       sleek.palette.black,
     ];
-    return SingleChildScrollView(
-      child: Column(
+    return SleekScaffold(
+      title: 'Buttons',
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SectionHeader('Flat style'),
+          SectionHeader('Flat style', topPadding: false),
           ButtonCollection(
             colors: colors,
             builder: (context, color) => SleekButton(

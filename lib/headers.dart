@@ -4,14 +4,15 @@ import 'package:sleek/sleek.dart';
 
 class SectionHeader extends StatelessWidget {
   final String title;
+  final bool topPadding;
 
-  const SectionHeader(this.title);
+  const SectionHeader(this.title, {this.topPadding = true});
 
   @override
   Widget build(BuildContext context) {
     final sleek = Sleek.of(context);
     return SleekRow(
-      padding: SleekInsets.big(SleekSides.top),
+      padding: topPadding ? SleekInsets.big(SleekSides.top) : null,
       spaceBetween: SleekSpace.normal,
       children: <Widget>[
         SleekText(

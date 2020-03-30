@@ -13,12 +13,12 @@ class ExamplePalette {
   }) : assert(palette != null || url != null);
 
   factory ExamplePalette.sleek() => ExamplePalette(
-        name: 'sleek',
+        name: 'Sleek',
         palette: SleekPaletteData.fallback(),
       );
 
   factory ExamplePalette.bulma() => ExamplePalette(
-        name: 'bulma',
+        name: 'Bulma',
         palette: SleekPaletteData(
           primary: HSLColor.fromAHSL(1.0, 171.0, 1.0, 0.41).toColor(),
           info: HSLColor.fromAHSL(1.0, 204.0, 0.86, 0.53).toColor(),
@@ -35,7 +35,7 @@ class ExamplePalette {
       );
 
   factory ExamplePalette.foundation() => ExamplePalette(
-        name: 'foundation',
+        name: 'Foundation',
         palette: SleekPaletteData.fromJson({
           'primary': 0xFF1779ba,
           'info': 0xFF3779B5,

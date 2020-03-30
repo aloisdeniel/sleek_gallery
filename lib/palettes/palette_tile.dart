@@ -11,6 +11,16 @@ class ExamplePaletteTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      leading: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0),
+        child: Container(
+          width: 32,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(2.0),
+            color: palette.palette.primary,
+          ),
+        ),
+      ),
       title: Text(palette.name),
       onTap: () {
         if (palette.palette != null) {

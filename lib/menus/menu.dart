@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sleek/sleek.dart';
 
-enum Section {
-  typography,
-  button,
-}
+import '../sections/buttons.dart';
+import '../sections/typography.dart';
 
 class Menu extends StatelessWidget {
-  final ValueNotifier<Section> selected;
-
-  const Menu(this.selected);
+  const Menu();
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +14,21 @@ class Menu extends StatelessWidget {
         children: <Widget>[
           ListTile(
             title: SleekText('Typography', style: SleekTextStyle.title2()),
-            onTap: () => selected.value = Section.typography,
+            onTap: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => TypographySection(),
+              ),
+            ),
           ),
           ListTile(
             title: SleekText('Button', style: SleekTextStyle.title2()),
-            onTap: () => selected.value = Section.button,
+            onTap: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ButtonSection(),
+              ),
+            ),
           ),
         ],
       ),
